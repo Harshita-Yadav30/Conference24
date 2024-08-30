@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+            --light-green: #c9df8a;
+            --dark-green: #234d20;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+
+        hr{
+            max-width: 85%;
+        }
+
+
+        hr {
+            border-bottom: var(--dark-green) 7px solid;
+            width: 100%;
+            margin: auto;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            transition: none !important;
+        }
+
+        #about .heading {
+            margin-top: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        #about .para {
+            margin: 50px;
+            text-align: justify;
+            margin-top: 10px;
+        }
+
+        #about h2 {
+            margin-bottom: 5px;
+            font-size: 220%;
+        }
+
+        .img-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: 20%;
+        }
+
+        #conf-details {
+            width: 85%;
+            height: auto;
+            margin: auto;
+            margin-top: 20px;
+            background-color: var(--light-green);
+            display: flex;
+            border-radius: 10px;
+            justify-content: center;
+            align-items: center;
+            animation: slidefromleft 1.5s ease forwards;
+            animation-delay: 0.2s;
+        }
+
+        #conf-details .conf-img {
+            margin: 20px;
+            width: 450px;
+            height: auto;
+            border-radius: 15px;
+        }
+
+        .info {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        #conf-info h2 {
+            margin: 20px;
+        }
+
+        #swd-details {
+            width: 85% !important;
+            margin: auto;
+            background-color: var(--light-green);
+            display: flex;
+            border-radius: 10px;
+            justify-content: center;
+            align-items: center;
+            animation: slidefromright 1.5s ease forwards;
+            animation-delay: 0.2s;
+        }
+
+        #swd-details .swd-img {
+            background-color: rgb(240, 238, 238);
+            border: 30px solid rgb(240, 238, 238);
+            margin: 20px;
+            height: 20rem;
+            /* width: 350px; */
+            border-radius: 15px;
+        }
+
+        #clg-details {
+            width: 85%;
+            height: 20%;
+            margin: auto;
+            background-color: var(--light-green);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            animation: slidefromleft 1.5s ease forwards;
+            animation-delay: 0.2s;
+        }
+
+        #clg-details .clg-img {
+            margin: 20px;
+            /* width: 450px; */
+            height: 20px;
+            height: 18rem;
+            border-radius: 15px;
+        }
+
+        @keyframes slidefromtop {
+            0% {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slidefromright {
+            0% {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slidefromleft {
+            0% {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            #about-bg-img-wrapper {
+                width: 100%;
+            }
+
+            #conf-details,
+            #clg-details {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+            }
+
+            #swd-details {
+                display: flex;
+                flex-direction: column-reverse;
+                width: 100%;
+            }
+
+            .img-container {
+                max-width: 80%;
+            }
+
+            .conf-img,
+            .swd-img,
+            .clg-img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            #about h2 {
+                font-size: 130%;
+            }
+
+            #about .para {
+                font-size: 70%;
+            }
+        }
+
+
+        h1 {
+            color: white;
+            background-image: url("./assets/image/about-bg-img.jpg");
+            background-size: cover;
+            background-position: 70%;
+            padding: 20px;
+            text-align: center;
+            margin: 0;
+            overflow: hidden;
+            width: 100%;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            /* filter: blur(50%); */
+        }
+
+        h1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: inherit;
+            background-size: inherit;
+            background-position: inherit;
+            filter: brightness(50%);
+            z-index: 0;
+        }
+
+        .slide-down {
+            position: relative;
+            z-index: 1;
+            animation: slideDown 2s ease-out forwards;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* styling for container */
+        .containerH {
+            /* display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            line-height: 1.7rem; */
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0px;
+        }
+
+        @media (max-width: 991.98px) {
+            #footer .footer-top .social-links a {
+                display: inline-block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #conf-logo{
+                margin-left: -2.5rem;
+            }
+        }
+
+        #overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- //Header Section (Navbar) -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#" id="conf-logo">
+                <img src="./assets/image/conf-logo.png" alt="Logo 1" height="85">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link selected" href="./about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./registration.html">Registration</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="./Sponsors.html">Sponsors</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contactUs.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="right-logos">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/image/swdlogo.png" alt="Logo 2" height="80">
+                </a>
+                <a id="nss-logo" class="navbar-brand" href="#">
+                    <img src="./assets/image/nss.png" alt="Logo 3" height="80">
+                </a>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- // About Section -->
+    <section id="about">
+
+        <div class="containerH my-5">
+            <!--<marquee behavior="scroll" direction="left">After the conference cerfificates will be given</marquee> -->
+            <h1><span class="slide-down">About</span></h1>
+        </div>
+        
+        <div class="containerR my-5">
+            <div id="conf-details">
+                <div class="img-container">
+                    <img class="conf-img" src="./assets/image/conf.jpg" alt="Conference">
+                </div>
+                <div class="info" id="conf-info">
+                    <h2 class="heading">About the Conference</h2>
+                    <p class="para">The conference aims to unite individuals dedicated to societal betterment, providing
+                        a
+                        platform to share impactful ideas for social welfare. It will tackle pressing social issues and
+                        propose innovative solutions through dynamic presentations and collaborative round-table discussions.
+                        <br><br> It will cover vital areas such as education, healthcare, technology, and the environment. <br><br>
+                        By
+                        featuring inspiring speaker sessions, it strives to raise awareness and cultivate responsible,
+                        proactive citizens committed to driving positive change in our society.
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div id="swd-details">
+                <div class="info">
+                    <h2 class="heading">Social Welfare & Development <br> Committee</h2>
+                    <p class="para">The Social Welfare and Development Committee of VIT Pune has embarked on a
+                        remarkable
+                        journey of compassion and positive change. With a steadfast commitment for making a difference,
+                        our
+                        team has tirelessly worked across various domains, reaching out to the vulnerable and fostering
+                        a
+                        sense of hope and empowerment. <br><br> With various flagship events and GP2 Activities, we also
+                        place a strong emphasis on social services, ensuring that essential support reaches those in
+                        need.
+                        Our NSS (National Service Scheme) camps provide opportunities for volunteers to make a tangible
+                        difference, while our blood donation drives save lives and encourage a spirit of generosity.
+                        <br><br> Beyond the numbers, we have witnessed the profound strength of the human spirit,
+                        reminding
+                        us of the incredible power of kindness and empathy.
+                        <br><br>
+                        <strong>Website Link:</strong> <a href="https://swd.vit.edu/">https://swd.vit.edu/</a>
+                    </p>
+                </div>
+                <div class="img-container">
+                    <img class="swd-img" src="./assets/image/swdlogo.png" alt="SWD Logo">
+                </div>
+            </div>
+            <hr>
+            <div id="clg-details">
+                <div class="img-container">
+                    <img class="clg-img" src="./assets/image/vitlogo.png" alt="VIT Pune">
+                </div>
+                <div class="info">
+                    <h2 class="heading">Vishwakarma Institute Of Technology, Pune</h2>
+                    <p class="para">Vishwakarma Institute of Technology, part of the Bansilal Ramnath Agrawal Charitable
+                        Trust, has been a symbol of academic excellence since its establishment in 1983. The institute
+                        proudly holds a NAAC accreditation of Grade 'A++', reflecting its commitment to high educational
+                        standards. <br><br> The college frequently organizes diverse activities to strengthen students'
+                        educational foundations and foster social awareness. The institution encourages students to
+                        explore
+                        new ideas and consistently supports their initiatives, promoting their holistic development.
+                        <br><br> In keeping with its tradition of innovation and social responsibility, VIT hosts
+                        various
+                        conferences and events. These activities emphasize the institute's dedication to both academic
+                        and
+                        personal growth, reinforcing its reputation as a leading educational institution in Pune.
+                        <br><br>
+                        <strong>Website Link:</strong> <a href="https://www.vit.edu/">https://www.vit.edu/</a>
+                    </p>
+                </div>
+            </div>
+            <br>
+    </section>
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-6 footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <a href="./index.html">Home</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="./about.html">About</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="./events.html">Events</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 footer-links">
+                        <h4>Important Links</h4>
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <a href="./registration.html">Registrations</a>
+                            </li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="./Sponsors.html">Sponsors</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="./contactUs.html">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 footer-info">
+                        <h4>SW&D</h4>
+                        <p style="text-align: justify;">Social Welfare and Development Committee with the motto of
+                            "Empowering Society, Transforming
+                            Lives" has been helping society for several years and continues to do so in any
+                            circumstance.
+                        </p><br>
+                        <div class="social-links">
+                            <!-- <img src="./assets/image/swdlogo.png" alt="Logo" style="padding-right: 6.2rem; padding-left: 0.2rem;">      -->
+                            <a href="https://twitter.com/vit_socials" target="_blank" class="twitter"><i
+                                    class="bi bi-twitter"></i></a>
+                            <a href="https://www.facebook.com/vitsocials" target="_blank" class="facebook"><i
+                                    class="bi bi-facebook"></i></a>
+                            <a href="https://www.instagram.com/vitsocials/" target="_blank" class="instagram"><i
+                                    class="bi bi-instagram"></i></a>
+                            <a href="https://www.youtube.com/channel/UCJnaNm8Ns08rUIhsdFM2fhA" target="_blank"
+                                class="google-plus"><i class="bi bi-youtube"></i></a>
+                            <a href="https://www.linkedin.com/company/vit-social-welfare-development/" target="_blank"
+                                class="linkedin"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                        <br>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                © 2024-25 Social Welfare &amp; Development Committee, VIT Pune.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</body>
+
+</html>

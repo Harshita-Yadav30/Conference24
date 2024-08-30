@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <style>
+        h1 {
+            color: white;
+            background-image: url("./assets/image/about-bg-img.jpg");
+            background-size: cover;
+            background-position: 70%;
+            padding: 20px;
+            text-align: center;
+            margin: 0;
+            overflow: hidden;
+            width: 100%;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            /* filter: blur(50%); */
+        }
+
+        h1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: inherit;
+            background-size: inherit;
+            background-position: inherit;
+            filter: brightness(50%);
+            z-index: 0;
+        }
+
+        .slide-down {
+            position: relative;
+            z-index: 1;
+            animation: slideDown 2s ease-out forwards;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            #footer .footer-top .social-links a {
+                display: inline-block;
+            }
+        }
+
+        /* styling for container */
+        .containerR {
+            /* display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            line-height: 1.7rem; */
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0px;
+        }
+
+        .containerR marquee {
+            background-color: #c9df8a;
+            height: 25px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .linksR {
+            padding: 20px 10px 20px 10px;
+            font-size: 30px;
+        }
+
+        .register-button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            background-color: #c9df8a;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .register-button:hover {
+            background-color: #234d20;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .terms {
+            padding: 3px;
+            line-height: 1.2rem;
+        }
+
+        .terms li {
+            padding-left: 5px;
+            margin-bottom: 1rem;
+            line-height: 1.5rem;
+        }
+
+        .countdown-strip {
+            margin: 10px 0px;
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+            background-color: #c9df8a;
+            color: black;
+            padding: 10px 350px;
+            font-family: "poppins", sans-serif;
+            gap: 40px;
+        }
+
+        .time-unit {
+            margin: 0 15px;
+            text-align: center;
+        }
+
+        .time-unit div {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .time-unit span {
+            font-size: 16px;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .table-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .events-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .events-table th,
+        .events-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .events-table th {
+            background-color: #234d20;
+            color: white;
+            font-weight: bold;
+        }
+
+        .events-table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .events-table th:first-child,
+        .events-table td:first-child {
+            border-right: 2px solid #ddd;
+        }
+
+        .bold {
+            font-style: bold;
+        }
+
+        @media (max-width: 768px) {
+            .countdown-strip {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px 10px;
+                gap: 10px;
+            }
+            
+            #conf-logo{
+                margin-left: -2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .countdown-strip {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px 10px;
+                gap: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#" id="conf-logo">
+                <img src="./assets/image/conf-logo.png" alt="Logo 1" height="85">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./events.html">Events</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link  selected" href="./registration.html">Registration</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="./Sponsors.html">Sponsors</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contactUs.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="right-logos">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/image/swdlogo.png" alt="Logo 2" height="80">
+                </a>
+                <a id="nss-logo" class="navbar-brand" href="#">
+                    <img src="./assets/image/nss.png" alt="Logo 3" height="80">
+                </a>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Content -->
+    <div class="containerR my-5">
+        <marquee behavior="scroll" direction="left">Certificates will be distributed after the Conference.</marquee>
+        <h1><span class="slide-down">Registration Page</span></h1>
+        <div id="countdown" class="countdown-strip">
+            <div class="time-unit">
+                <div id="days">0</div>
+                <span>Days</span>
+            </div>
+            <div class="time-unit">
+                <div id="hours">0</div>
+                <span>Hours</span>
+            </div>
+            <div class="time-unit">
+                <div id="minutes">0</div>
+                <span>Minutes</span>
+            </div>
+            <div class="time-unit">
+                <div id="seconds">0</div>
+                <span>Seconds</span>
+            </div>
+        </div>
+        <div class="fee" style="font-size: 18px;">
+            <div class="table-container">
+                <table class="events-table">
+                    <thead>
+                        <tr>
+                            <th>Registration Category</th>
+                            <th>Fee</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr>
+                            <td><b>Attendee</b></td>
+                            <td>150 INR</td>
+                        </tr> -->
+                        <tr>
+                            <td><b>Participant Team</b></td>
+                            <td>₹295 (Inclusive of 18% GST)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- <div class="linksR text-center">
+            <a href="https://www.example.com/register" class="button">CLICK HERE TO REGISTER</a>
+        </div> -->
+        <div class="button-container linksR text-center">
+            <a href="https://forms.gle/B8aJZzP6BvwBXNET8" class="register-button">REGISTER NOW</a>
+        </div>
+        <div class="terms" style="list-style-type: decimal;">
+            <strong style="line-height: 3.5rem;">Note:</strong>
+            <!-- <li><strong>Attendee Category:</strong> Registration fee towards the conference includes access to NGO Talks, Conference merchandise, and Refreshments.</li> -->
+            <li>Registration fee towards the conference includes access to NGO Talks, Tenure presentation, Round-Table Discussion, Conference merchandise, and Refreshments.</li>
+            <li>A <strong>Participant team</strong> must consist of <strong>exactly 5 members</strong>.</li>
+            <li><strong>Refund and Cancellation Policy:</strong> A candidate once registered and paid the registration fee is not allowed to cancel the registration. The registration fee for the conference once paid is not refundable.</li>
+        </div>
+    </div>
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-6 footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <a href="./index.html">Home</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="./about.html">About</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="./events.html">Events</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 footer-links">
+                        <h4>Important Links</h4>
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <a href="./registration.html">Registrations</a>
+                            </li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="./Sponsors.html">Sponsors</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="./contactUs.html">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 footer-info">
+                        <h4>SW&D</h4>
+                        <p style="text-align: justify;">Social Welfare and Development Committee with the motto of
+                            "Empowering Society, Transforming
+                            Lives" has been helping society for several years and continues to do so in any
+                            circumstance.
+                        </p><br>
+                        <div class="social-links">
+                            <!-- <img src="./assets/image/swdlogo.png" alt="Logo" style="padding-right: 6.2rem; padding-left: 0.2rem;">      -->
+                            <a href="https://twitter.com/vit_socials" target="_blank" class="twitter"><i
+                                    class="bi bi-twitter"></i></a>
+                            <a href="https://www.facebook.com/vitsocials" target="_blank" class="facebook"><i
+                                    class="bi bi-facebook"></i></a>
+                            <a href="https://www.instagram.com/vitsocials/" target="_blank" class="instagram"><i
+                                    class="bi bi-instagram"></i></a>
+                            <a href="https://www.youtube.com/channel/UCJnaNm8Ns08rUIhsdFM2fhA" target="_blank"
+                                class="google-plus"><i class="bi bi-youtube"></i></a>
+                            <a href="https://www.linkedin.com/company/vit-social-welfare-development/" target="_blank"
+                                class="linkedin"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                        <br>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                © 2024-25 Social Welfare &amp; Development Committee, VIT Pune.
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- function for timer -->
+    <script>
+        const endDate = new Date('2024-09-25T23:59:59+05:30').getTime();
+
+        const daysElement = document.getElementById('days');
+        const hoursElement = document.getElementById('hours');
+        const minutesElement = document.getElementById('minutes');
+        const secondsElement = document.getElementById('seconds');
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const timeLeft = endDate - now;
+
+            if (timeLeft >= 0) {
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                daysElement.textContent = days;
+                hoursElement.textContent = hours;
+                minutesElement.textContent = minutes;
+                secondsElement.textContent = seconds;
+            } else {
+                clearInterval(countdownInterval);
+                daysElement.textContent = '0';
+                hoursElement.textContent = '0';
+                minutesElement.textContent = '0';
+                secondsElement.textContent = '0';
+            }
+        }
+
+        const countdownInterval = setInterval(updateCountdown, 1000);
+
+    </script>
+</body>
+
+</html>
